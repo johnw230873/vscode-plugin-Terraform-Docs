@@ -23,7 +23,7 @@
         {
           "command": "tfdocs.generateDocs",
           "group": "z_custom@1",
-          "when": "resourceExtname == .tf && resourceScheme == file"
+          "when": "(resourceExtname == .tf || resourceExtname == .tfvars) && resourceScheme == file"
         }
       ]
     }

@@ -1,65 +1,45 @@
-# tfdocs README
+Sure, here's a draft for your `README.md` file:
 
-This is the README for your extension "tfdocs2". After writing up a brief description, we recommend including the following sections.
+```markdown
+# Terraform-Docs VS Code Extension
+
+This is a Visual Studio Code extension that allows you to generate Terraform documentation by running the `terraform-docs` command.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- Right-click on any `.tf` or `.tfvars` file in the Explorer panel and select "Generate Terraform Docs" to generate a `README.md` file in the same directory.
+- If a `README.md` file already exists, you will be asked for confirmation before it is overwritten.
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+This extension requires the `terraform-docs` command-line tool to be installed and available in your `PATH`. You can download it from https://github.com/terraform-docs/terraform-docs/releases/latest .
 
-## Extension Settings
+## Installation
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+To install this extension:
 
-For example:
+1. Download the `.vsix` file from the GitHub repository.
+2. Open VS Code.
+3. Click on the Extensions view icon on the Sidebar.
+4. Click on the More (...) menu at the top of the Extensions view.
+5. Select `Install from VSIX...`.
+6. Choose the `.vsix` file you downloaded.
 
-This extension contributes the following settings:
+## Usage
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+To use this extension:
 
-## Known Issues
+1. Right-click on any `.tf` file in the Explorer panel.
+2. Select "Generate Terraform Docs".
+3. If a `README.md` file already exists in the same directory, you will be asked for confirmation before it is overwritten.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+## Contributing
 
-## Release Notes
+If you have suggestions for how this extension could be improved, or want to report a bug, open an issue on the GitHub repository. We'd love to hear from you!
 
-Users appreciate release notes as you update your extension.
+## License
 
-### 1.0.0
+This extension is licensed under [insert your license here].
+```
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Please replace `[insert your license here]` with your actual license. Also, please note that this is just a draft and you might need to modify it according to your needs. Let me know if you need further assistance! 😊
