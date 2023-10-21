@@ -1,5 +1,5 @@
 ```markdown
-# Terraform-Docs VS Code Extension
+# Terraform-Docs  vsCode Extension
 
 This is a Visual Studio Code extension that allows you to generate Terraform documentation by running the `terraform-docs` command.
 
@@ -37,5 +37,5 @@ If you have suggestions for how this extension could be improved, or want to rep
 
 ## License
 
-This extension is licensed under general use.
+This extension is use at own risk.
 ```

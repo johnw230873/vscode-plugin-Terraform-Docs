@@ -9,6 +9,7 @@ function activate(context) {
     const dirPath = path.dirname(filePath);
     const readmePath = path.join(dirPath, 'README.md');
 
+
     if (fs.existsSync(readmePath)) {
       vscode.window.showWarningMessage('README.md already exists. Do you want to overwrite it?', 'Yes', 'No')
         .then(selection => {
@@ -25,7 +26,8 @@ function activate(context) {
 }
 
 function generateDocs(dirPath, readmePath) {
-  cp.exec(`terraform-docs markdown ${dirPath} > ${readmePath}`, (err, stdout, stderr) => {
+  const terraformDocCommand = `terraform-docs markdown ${dirPath}  --output-template "<!-- BEGIN_TF_DOCS -->\\n{{ .Content }}\\n<!-- END_TF_DOCS -->"  --output-file ${readmePath}`
+  cp.exec(terraformDocCommand , (err, stdout, stderr) => {
     if (err) {
       vscode.window.showErrorMessage(`Error generating docs: ${stderr}`);
     } else {
