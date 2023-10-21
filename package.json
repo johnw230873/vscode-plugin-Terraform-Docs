@@ -1,8 +1,9 @@
 {
   "name": "tfdocs",
   "displayName": "Terraform-Docs",
-  "description": "",
+  "description": "Generate Readmes using Terraform-docs",
   "version": "0.0.1",
+  "icon": "./terraform-docs.ico",
   "engines": {
     "vscode": "^1.83.0"
   },
