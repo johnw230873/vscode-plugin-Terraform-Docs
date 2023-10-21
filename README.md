@@ -1,4 +1,4 @@
-# tfdocs2 README
+# tfdocs README
 
 This is the README for your extension "tfdocs2". After writing up a brief description, we recommend including the following sections.
 

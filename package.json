@@ -1,6 +1,6 @@
 {
-  "name": "tfdocs2",
-  "displayName": "tfdocs2",
+  "name": "tfdocs",
+  "displayName": "Terraform-Docs",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -13,9 +13,19 @@
   "main": "./extension.js",
   "contributes": {
     "commands": [{
-      "command": "tfdocs2.helloWorld",
-      "title": "Hello World"
-    }]
+      "command": "tfdocs.generateDocs",
+      "title": "Create Terraform Documentation"
+    }
+  ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "tfdocs.generateDocs",
+          "group": "z_custom@1",
+          "when": "resourceExtname == .tf && resourceScheme == file"
+        }
+      ]
+    }
   },
   "scripts": {
     "lint": "eslint .",

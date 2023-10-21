@@ -1,31 +1,40 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
+const cp = require('child_process');
+const path = require('path');
+const fs = require('fs');
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
-
-/**
- * @param {vscode.ExtensionContext} context
- */
 function activate(context) {
+  let disposable = vscode.commands.registerCommand('tfdocs.generateDocs', function (uri) {
+    const filePath = uri.fsPath;
+    const dirPath = path.dirname(filePath);
+    const readmePath = path.join(dirPath, 'README.md');
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "tfdocs2" is now active!');
+    if (fs.existsSync(readmePath)) {
+      vscode.window.showWarningMessage('README.md already exists. Do you want to overwrite it?', 'Yes', 'No')
+        .then(selection => {
+          if (selection === 'Yes') {
+            generateDocs(dirPath, readmePath);
+          }
+        });
+    } else {
+      generateDocs(dirPath, readmePath);
+    }
+  });
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('tfdocs2.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
-
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from tfdocs2!');
-	});
-
-	context.subscriptions.push(disposable);
+  context.subscriptions.push(disposable);
 }
+
+function generateDocs(dirPath, readmePath) {
+  cp.exec(`terraform-docs markdown ${dirPath} > ${readmePath}`, (err, stdout, stderr) => {
+    if (err) {
+      vscode.window.showErrorMessage(`Error generating docs: ${stderr}`);
+    } else {
+      vscode.window.showInformationMessage('Docs generated successfully');
+      console.log(stdout);
+    }
+  });
+}
+
 
 // This method is called when your extension is deactivated
 function deactivate() {}
