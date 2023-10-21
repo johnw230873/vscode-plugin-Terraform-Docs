@@ -1,5 +1,3 @@
-Sure, here's a draft for your `README.md` file:
-
 ```markdown
 # Terraform-Docs VS Code Extension
 
@@ -39,7 +37,5 @@ If you have suggestions for how this extension could be improved, or want to rep
 
 ## License
 
-This extension is licensed under [insert your license here].
+This extension is licensed under general use.
 ```
-
-Please replace `[insert your license here]` with your actual license. Also, please note that this is just a draft and you might need to modify it according to your needs. Let me know if you need further assistance! 😊
