@@ -1,8 +1,8 @@
 {
   "name": "tfdocs",
-  "displayName": "Simple Terraform-Docs",
-  "description": "Generate Readmes using Terraform-docs",
-  "version": "0.0.6",
+  "displayName": "Simple Terraform Docs",
+  "description": "Generate Readmes' using Terraform-docs",
+  "version": "0.0.9",
   "icon": "./terraform-docs.ico",
   "publisher": "jono",
   "repository": "https://github.com/johnw230873/vscode-plugin-Terraform-Docs",
