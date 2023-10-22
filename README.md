@@ -30,6 +30,7 @@ To use this extension:
 1. Right-click on any `.tf` file in the Explorer panel.
 2. Select "Generate Terraform Docs".
 3. If a `README.md` file already exists in the same directory, you will be asked for confirmation before it is overwritten.
+[](demo.gif)
 
 ## Contributing
 
