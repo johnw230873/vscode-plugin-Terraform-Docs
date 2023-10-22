@@ -1,6 +1,6 @@
 # Terraform-Docs VSCode Extension
 
-This is a Visual Studio Code extension that allows you to generate Terraform documentation by running the `terraform-docs` command.
+This is a Visual Studio Code extension uses the application `terraform-docs`, it allows for easy creation of docuementation by allowing the developer to right click on any Terraform file in the module folder and select `Create Terraform Documentation`
 
 ## Features
 
