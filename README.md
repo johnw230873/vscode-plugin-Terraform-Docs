@@ -1,4 +1,4 @@
-```markdown
+
 # Terraform-Docs  vsCode Extension
 
 This is a Visual Studio Code extension that allows you to generate Terraform documentation by running the `terraform-docs` command.
@@ -30,7 +30,8 @@ To use this extension:
 1. Right-click on any `.tf` file in the Explorer panel.
 2. Select "Generate Terraform Docs".
 3. If a `README.md` file already exists in the same directory, you will be asked for confirmation before it is overwritten.
-![demo](https://github.com/johnw230873/vscode-plugin-Terraform-Docs/blob/1006260590d89742cad57e7d4fc9e4f0698a0b76/demo.gif?raw=true)
+![demo](demo.gif)
+
 
 ## Contributing
 
@@ -39,4 +40,4 @@ If you have suggestions for how this extension could be improved, or want to rep
 ## License
 
 This extension is use at own risk.
-```
+
