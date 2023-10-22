@@ -2,7 +2,7 @@
   "name": "tfdocs",
   "displayName": "Terraform-Docs",
   "description": "Generate Readmes using Terraform-docs",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "icon": "./terraform-docs.ico",
   "publisher": "fmgjw2",
   "engines": {
@@ -14,6 +14,71 @@
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
+    "configuration": {
+      "properties": {
+        "tfdocs.terraformDocsPath": {
+          "type": "string",
+          "default": "",
+          "description": "Enter the path of the terraform-docs executable if it can't be found automatically.\nExample: c:\\terraform\\\nDefault: <Blank>"
+        },
+        "tfdocs.terraformTemplateOptions": {
+          "type": "string",
+          "default": "<!-- BEGIN_TF_DOCS -->\\n{{ .Content }}\\n<!-- END_TF_DOCS -->",
+          "description": "The string for the \"output-template\" property.\n\nDefault: <!-- BEGIN_TF_DOCS -->\\n{{ .Content }}\\n<!-- END_TF_DOCS -->"
+        },
+        "tfdocs.hideDataSources": {
+          "type": "boolean",
+          "default":false,
+          "description": "Do not include DataSources information in the Readme"
+        },
+        "tfdocs.hideFooter": {
+          "type": "boolean",
+          "default":false,
+          "description": "Do not include Footer information in the Readme"
+        },
+        "tfdocs.hideHeader": {
+          "type": "boolean",
+          "default":false,
+          "description": "Do not include Header information in the Readme"
+        },
+        "tfdocs.hideInputs": {
+          "type": "boolean",
+          "default":false,
+          "description": "Do not include Inputs information in the Readme"
+        },
+        "tfdocs.hideModules": {
+          "type": "boolean",
+          "default":false,
+          "description": "Do not include Modules information in the Readme"
+        },
+        "tfdocs.hideOutputs": {
+          "type": "boolean",
+          "default":false,
+          "description": "Do not include Outputs information in the Readme"
+        },
+        "tfdocs.hideProviders": {
+          "type": "boolean",
+          "default":false,
+          "description": "Do not include Providers information in the Readme"
+        },
+        "tfdocs.hideRequirements": {
+          "type": "boolean",
+          "default":false,
+          "description": "Do not include Requirements information in the Readme"
+        },
+        "tfdocs.hideResources": {
+          "type": "boolean",
+          "default":false,
+          "description": "Do not include Resources information in the Readme"
+        },
+        "tfdocs.OtherFlags": {
+          "type": "string",
+          "default":"",
+          "description": "Place other Terraform-Docs flags you wish to run"
+        }
+      }
+    },
+    
     "commands": [{
       "command": "tfdocs.generateDocs",
       "title": "Create Terraform Documentation"
@@ -28,7 +93,9 @@
         }
       ]
     }
+    
   },
+
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
