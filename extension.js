@@ -33,7 +33,7 @@ function generateDocs(dirPath, readmePath) {
   const otherflags = config.get('OtherFlags');
 
   //const terraformDocCommand = `terraform-docs markdown ${dirPath}  --output-template "<!-- BEGIN_TF_DOCS -->\\n{{ .Content }}\\n<!-- END_TF_DOCS -->"  --output-file ${readmePath}`
-  var terraformDocCommand =  terraformDocsPath ? path.join(terraformDocsPath, 'terraform-docs') + ` markdown ${dirPath} --output-file README.md ` : `terraform-docs markdown ${dirPath} --output-file README.md `;
+  var terraformDocCommand =  terraformDocsPath ? `"`+path.join(terraformDocsPath, 'terraform-docs') + `" markdown "${dirPath}" --output-file README.md ` : `terraform-docs markdown "${dirPath}" --output-file README.md `;
   terraformDocCommand = (config.get('hideDataSources')) ? terraformDocCommand : terraformDocCommand + `--hide data-sources `;
   terraformDocCommand = (config.get('hideFooter')) ? terraformDocCommand +  `--hide footer ` : terraformDocCommand;
   terraformDocCommand = (config.get('hideHeader')) ?  terraformDocCommand + `--hide header ` : terraformDocCommand;
